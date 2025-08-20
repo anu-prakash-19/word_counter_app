@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Word Counter</h2>
+        <form method="POST">
+            <textarea name="text" placeholder="Type or paste your text here...">{{ text }}</textarea><br>
+            <button type="submit">Count Words</button>
+        </form>
+        {% if count is not none %}
+        <div class="result">
+            Total Words: {{ count }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
